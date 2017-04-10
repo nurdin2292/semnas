@@ -10,13 +10,13 @@
 
 		public function v_content($pages = 'index')
 		{
-
 			if ($pages != 'index') {
+				// echo $pages;
 				$this->load->view('content/'.$pages);
 			} else {
+				// echo $pages;
 				$this->load->view($pages);
 			}
-
 		}
 
 	}

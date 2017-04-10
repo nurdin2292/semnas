@@ -8,15 +8,13 @@
 			$this->load->view('index');
 		}
 
-		public function v_content($pages = 'index')
+		public function u_content($pages = 'index')
 		{
-
 			if ($pages != 'index') {
 				$this->load->view('content/'.$pages);
 			} else {
 				$this->load->view($pages);
 			}
-
 		}
 
 	}

@@ -19,7 +19,7 @@
   <nav>
     <ul>
       <li class="">
-        <a href="content/dashboard.php" title="Dashboard"><i class="fa fa-lg fa-fw fa-tachometer"></i> <span class="menu-item-parent">Dashboard</span></a>
+        <a href="A_content/dashboard.php" title="Dashboard"><i class="fa fa-lg fa-fw fa-tachometer"></i> <span class="menu-item-parent">Dashboard</span></a>
       </li>
       <li>
         <a href="#"><i class="fa fa-lg fa-fw fa-code-fork"></i> <span class="menu-item-parent">Data Master</span></a>
@@ -33,19 +33,19 @@
         <a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Transaksi</span></a>
         <ul>
           <li>
-            <a href="content/event">Seminar</a>
+            <a href="A_content/event">Seminar</a>
           </li>
           <li>
-            <a href="content/reg">Registrasi Peserta</a>
+            <a href="A_content/reg">Registrasi Peserta</a>
           </li>
           <li>
-            <a href="content/paper">Paper</a>
+            <a href="A_content/paper">Paper</a>
           </li>
           <li>
-            <a href="content/bayar">Pembayaran</a>
+            <a href="A_content/bayar">Pembayaran</a>
           </li>
           <li>
-            <a href="content/sertifikat">Sertifikat</a>
+            <a href="A_content/sertifikat">Sertifikat</a>
           </li>
         </ul>
       </li>

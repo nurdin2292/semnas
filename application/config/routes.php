@@ -57,11 +57,11 @@ $route['translate_uri_dashes'] = FALSE;
 
 // Routing for Admin
 $route['Admin'] = 'admin/v_content';
-$route['content/(:any)'] = 'admin/v_content/$1';
+$route['A_content/(:any)'] = 'admin/v_content/$1';
 
 // Routing for User
-$route['User'] = 'user/v_content';
-$route['content/(:any)'] = 'user/v_content/$1';
+$route['User'] = 'user/u_content';
+$route['U_content/(:any)'] = 'user/u_content/$1';
 
 // Routing for LandingPages
 $route['Home'] = 'home';
