@@ -46,3 +46,6 @@ Git Command note :
 - git branch checkout -b branchname       = For creating and using a new branch
 - git branch checkout branchname          = For using a branch
 - git branch -D branchname                = For deleting a branch
+- git remote add origin remote repository URL = Sets the new remote
+- git remote -v                           = Verifies the new remote URL
+- git push origin master                  = Pushes the changes in your local repository up to the remote repository you specified as the origin
