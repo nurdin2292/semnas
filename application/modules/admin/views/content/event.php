@@ -51,8 +51,8 @@
 						<table id="datatable_fixed_column" class="table table-striped table-bordered" width="100%">
 					    <thead>
 								<tr>
-									<th class="hasinput" style="width:8%">
-										<input type="text" class="form-control" placeholder="Filter ID" />
+									<th class="hasinput" style="width:5%">
+										<input type="text" class="form-control" placeholder="ID" />
 									</th>
 									<th class="hasinput" style="width:20%">
 										<input type="text" class="form-control" placeholder="Filter Judul" />
@@ -61,8 +61,8 @@
 										<input id="dateselect_filter" type="text" placeholder="Filter Date" class="form-control datepicker" data-dateformat="yy/mm/dd">
 										<label for="dateselect_filter" class="glyphicon glyphicon-calendar no-margin padding-top-15" rel="tooltip" title="" data-original-title="Filter Date"></label>
 									</th>
-									<th class="hasinput" style="width:13%">
-										<input type="text" class="form-control" placeholder="Filter Lama Event" />
+									<th class="hasinput" style="width:10%">
+										<input type="text" class="form-control" placeholder="Jenis Event" />
 									</th>
 									<th class="hasinput" style="width:13%">
 										<input type="text" class="form-control" placeholder="Filter Jurusan" />
@@ -71,7 +71,7 @@
 										<input type="text" class="form-control" placeholder="Filter Quota" />
 									</th>
 									<td colspan="2">
-										<button type="button" class="btn btn-labeled btn-primary" data-toggle="modal" data-target="#myModal">
+										<button type="button" class="btn btn-labeled btn-primary" data-toggle="modal" data-target="#evnt_tambah">
 										 <span class="btn-label">
 										  <i class="glyphicon glyphicon-plus-sign"></i></span>
 										 Tambah
@@ -82,7 +82,7 @@
 				          <th data-class="expand">ID</th>
 				          <th data-class="expand">Judul Event</th>
 				          <th data-class="expand">Tanggal Mulai</th>
-				          <th data-class="expand">Lama Event</th>
+				          <th data-class="expand">Jenis Event</th>
 				          <th data-class="expand">Jurusan</th>
 				          <th data-class="expand">Quota</th>
 									<th data-class="expand">Harga</th>
@@ -94,14 +94,17 @@
 					                <td>SE001</td>
 					                <td>asdasd asdasd asd asd asda sdasda sasdasd asda sdas das d</td>
 					                <td>2017/02/01</td>
-					                <td>3 Hari</td>
+					                <td>Seminar</td>
 					                <td>Teknik Informatika</td>
 					                <td>1600 Org</td>
 													<td>Rp 175,000</td>
 													<td>
 														<ul class="demo-btns">
 															<li>
-																<button type="button" name="button" class="btn btn-warning" data-toggle="modal" data-target="#myedit"><i class="fa  fa-edit"></i></button>
+																<button type="button" name="button" class="btn btn-warning" data-toggle="modal" data-target="#evnt_edit"><i class="fa  fa-edit"></i></button>
+															</li>
+															<li>
+																<button type="button" name="byrdtl" class="btn btn-success" data-toggle="modal" data-target="#evnt_lihat"><i class="fa  fa-search"></i></button>
 															</li>
 															<li>
 																<button type="button" name="button" class="btn btn-danger"><i class="fa  fa-trash-o"></i></button>
@@ -114,8 +117,8 @@
 					</div>
 					<!-- end widget content -->
 
-					<!-- Modal -->
-					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<!-- Modal Tambah -->
+					<div class="modal fade" id="evnt_tambah" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 					  <div class="modal-dialog" role="document">
 					    <div class="modal-content">
 					      <div class="modal-header">
@@ -123,7 +126,7 @@
 					        <h4 class="modal-title" id="myModalLabel">Event</h4>
 					      </div>
 					      <div class="modal-body">
-									<form action="" id="order-form" class="smart-form" novalidate="novalidate">
+									<form action="" method="post" class="smart-form">
 										<header>
 											Tambah Data
 										</header>
@@ -196,18 +199,23 @@
 												</label>
 											</section>
 										</fieldset>
+
+										<footer>
+											<button type="submit" class="btn btn-primary">
+												Simpan
+											</button>
+											<button type="button" class="btn btn-default" data-dismiss="modal">
+												Batal
+											</button>
+										</footer>
 									</form>
-					      </div>
-					      <div class="modal-footer">
-					        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-					        <button type="button" class="btn btn-primary">Simpan</button>
 					      </div>
 					    </div>
 					  </div>
 					</div>
 
-					<!-- Modal -->
-					<div class="modal fade" id="myedit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<!-- Modal Edit -->
+					<div class="modal fade" id="evnt_edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 					  <div class="modal-dialog" role="document">
 					    <div class="modal-content">
 					      <div class="modal-header">
@@ -288,11 +296,107 @@
 												</label>
 											</section>
 										</fieldset>
+
+										<footer>
+											<button type="submit" class="btn btn-primary">
+												Simpan
+											</button>
+											<button type="button" class="btn btn-default" data-dismiss="modal">
+												Batal
+											</button>
+										</footer>
+									</form>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+
+					<!-- Modal Lihat -->
+					<div class="modal fade" id="evnt_lihat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel">Event</h4>
+					      </div>
+					      <div class="modal-body">
+									<form action="" method="post" id="order-form" class="smart-form" novalidate="novalidate">
+										<header>
+											Lihat Detail Data
+										</header>
+
+										<fieldset>
+											<div class="row">
+												<section class="col col-6">
+													<label class="input"> <i class="icon-append fa fa-user"></i>
+														<input type="text" name="id" placeholder="ID Event" disabled="" value="SE001">
+													</label>
+												</section>
+												<section class="col col-6">
+													<label class="select">
+														<select name="j_event">
+															<option value="0" selected="" disabled="">Jenis Event</option>
+															<option value="1">Seminar</option>
+															<option value="2">Workshop</option>
+														</select> <i></i> </label>
+												</section>
+											</div>
+										</fieldset>
+
+										<fieldset>
+											<div class="row">
+												<section class="col col-xs-12">
+													<label class="input"> <i class="icon-append fa fa-envelope-o"></i>
+														<input type="text" name="judul" placeholder="Judul Event" disabled="">
+													</label>
+												</section>
+											</div>
+
+											<div class="row">
+												<section class="col col-6">
+													<label class="input"> <i class="icon-append fa fa-calendar"></i>
+														<input type="text" name="sdate" id="startdate" placeholder="Tanggal Mulai" disabled="">
+													</label>
+												</section>
+												<section class="col col-6">
+													<label class="input"> <i class="icon-append fa fa-calendar"></i>
+														<input type="text" name="fdate" id="finishdate" placeholder="Tanggal Selesai" disabled="">
+													</label>
+												</section>
+											</div>
+
+											<div class="row">
+												<section class="col col-4">
+													<label class="input"> <i class="icon-append fa fa-user"></i>
+														<input type="text" name="quota" placeholder="Quota" disabled="">
+													</label>
+												</section>
+												<section class="col col-4">
+													<label class="input"><i class="icon-append fa fa-user"></i>
+														<input type="text" name="hrg" placeholder="Harga" disabled="">
+													</label>
+												</section>
+												<section class="col col-4">
+													<label class="select">
+														<select name="budget">
+															<option value="0" selected="" disabled="">Jurusan</option>
+															<option value="1">Akutansi</option>
+															<option value="2">Manajemen</option>
+															<option value="3">Teknik Informatika</option>
+														</select> <i></i> </label>
+												</section>
+											</div>
+
+											<section>
+												<label class="textarea"> <i class="icon-append fa fa-comment"></i>
+													<textarea rows="5" name="comment" placeholder="Keterangan" ></textarea>
+												</label>
+											</section>
+										</fieldset>
 									</form>
 					      </div>
 					      <div class="modal-footer">
-					        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-					        <button type="button" class="btn btn-primary">Simpan</button>
+					        <button type="button" class="btn btn-primary" data-dismiss="modal">Kembali</button>
 					      </div>
 					    </div>
 					  </div>
@@ -432,7 +536,7 @@
                     	"sMessage": "Generated by SmartAdmin <i>(press Esc to close)</i>"
                 	}
 	             ],
-	            "sSwfPath": "js/plugin/datatables/swf/copy_csv_xls_pdf.swf"
+	            "sSwfPath": "assets/smartadmin/js/plugin/datatables/swf/copy_csv_xls_pdf.swf"
 	        },
 			"autoWidth" : true,
 			"preDrawCallback" : function() {
@@ -464,11 +568,11 @@
 
 	// load related plugins
 
-	loadScript("js/plugin/datatables/jquery.dataTables.min.js", function(){
-		loadScript("js/plugin/datatables/dataTables.colVis.min.js", function(){
-			loadScript("js/plugin/datatables/dataTables.tableTools.min.js", function(){
-				loadScript("js/plugin/datatables/dataTables.bootstrap.min.js", function(){
-					loadScript("js/plugin/datatable-responsive/datatables.responsive.min.js", pagefunction)
+	loadScript("assets/smartadmin/js/plugin/datatables/jquery.dataTables.min.js", function(){
+		loadScript("assets/smartadmin/js/plugin/datatables/dataTables.colVis.min.js", function(){
+			loadScript("assets/smartadmin/js/plugin/datatables/dataTables.tableTools.min.js", function(){
+				loadScript("assets/smartadmin/js/plugin/datatables/dataTables.bootstrap.min.js", function(){
+					loadScript("assets/smartadmin/js/plugin/datatable-responsive/datatables.responsive.min.js", pagefunction)
 				});
 			});
 		});
